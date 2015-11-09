@@ -78,7 +78,31 @@ namespace GameLibrary
                     }
                 }
             }
-            //Count[2] = this.ConvertNumbersToString(this.answer);
+            return Count;
+        }
+
+        //取回結果
+        public int[] GetResult2(List<int> userAnswer)
+        {
+            int[] Count = new int[] { 0, 0 };
+
+            for (int userAnswerIndex = 0; userAnswerIndex < 4; userAnswerIndex++)
+            {
+                for (int answerIndex = 0; answerIndex < 4; answerIndex++)
+                {
+                    if (userAnswer[userAnswerIndex] == this.answer[answerIndex])
+                    {
+                        if (userAnswerIndex == answerIndex)
+                        {
+                            Count[0]++;
+                        }
+                        else
+                        {
+                            Count[1]++;
+                        }
+                    }
+                }
+            }
             return Count;
         }
 
